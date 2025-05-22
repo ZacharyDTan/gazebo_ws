@@ -37,7 +37,12 @@ RUN apt-get update && \
   # ros-humble-depthai-ros \
   # ros-humble-navigation2 \
   # ros-humble-nav2-bringup \
+  # ros-${ROS_DISTRO}-phidgets-drivers \
+  # ros-humble-phidgets-drivers \
   ros-humble-slam-toolbox \
+  ros-humble-ros-gz-sim \
+  # python3-phidget22 \
+  ros-humble-tf-transformations \
   ros-humble-rqt-robot-steering \
   ros-${ROS_DISTRO}-nav2-bringup \
   ros-${ROS_DISTRO}-navigation2 \
@@ -47,6 +52,7 @@ RUN apt-get update && \
 
 # Install Python libraries
 # RUN pip3 install pyserial pynmea2 numpy==1.21.6 ultralytics
+RUN pip3 install Phidget22
 
 
 # Install Phidgets and SICK drivers if not present
