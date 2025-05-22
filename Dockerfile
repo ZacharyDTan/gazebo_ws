@@ -41,6 +41,7 @@ RUN apt-get update && \
   ros-humble-rqt-robot-steering \
   ros-${ROS_DISTRO}-nav2-bringup \
   ros-${ROS_DISTRO}-navigation2 \
+  ros-humble-tf-transformations \
   python3-pandas \
   && rm -rf /var/lib/apt/lists/*
 
