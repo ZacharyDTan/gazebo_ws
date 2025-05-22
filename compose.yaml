@@ -1,0 +1,25 @@
+services:
+  ignition:
+    image: gazebo:dev
+    privileged: true
+    container_name: gazebo_container
+    network_mode: host
+    volumes:
+      - ./src:/workspaces/gazebo_ws/src:rw
+      # - workspace:/workspaces/gazebo_ws
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - type: bind
+        source: /dev/shm
+        target: /dev/shm
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - XDG_RUNTIME_DIR=/tmp/xdg-runtime
+      - XAUTHORITY
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    command: ros2 launch p3at_description display.launch.py
+    tty: true
+    stdin_open: true
+    
+volumes:
+  workspace:
